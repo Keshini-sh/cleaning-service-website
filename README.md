@@ -77,6 +77,11 @@ JWT_SECRET=yourjwtsecret
 npm start
 
 5. Access the app:
-Client side: http://localhost:/
-
+Client side: http://localhost:5050/
+------------------------------------------------------------------------------------------
+Future Improvements
+- Deploy on Heroku / Render / Vercel
+- Implement real payment integration (Stripe/PayPal)
+- Add email notifications for bookings
+- Improve UI with modern framework (React/Next.js)
 
