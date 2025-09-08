@@ -7,43 +7,6 @@ let paymentMethods = [
 // ─────────────────────────────────────────────
 // Handle Account Settings Update (Client)
 // ─────────────────────────────────────────────
-/*
-document.querySelector("#account-form").addEventListener("submit", async function (event) {
-    event.preventDefault();
-
-    const name = document.querySelector("input[name='name']").value.trim();
-    const username = document.getElementById("username").value.trim();
-    const email = document.getElementById("email").value.trim();
-    const password = document.getElementById("password").value.trim();
-
-    if (!username || !email) {
-        alert("Username and Email cannot be empty!");
-        return;
-    }
-
-
-
-
-    try {
-        const response = await fetch(`/auth/settings`, {
-            method: 'PUT',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ name, address, email, password }),
-        });
-
-        const result = await response.json();
-        alert(result.message || 'Failed to update business information.');
-    } catch (error) {
-        console.error('Error updating business info:', error);
-        alert('Error updating business info.');
-    }
-
-});
-
-*/
-
-
-
 //adding this 
 document.querySelector("#account-form").addEventListener("submit", async function (event) {
     event.preventDefault();
@@ -81,19 +44,6 @@ document.querySelector("#account-form").addEventListener("submit", async functio
         alert('An error occurred while updating the profile.');
     }
 });
-
-
-
-
-
-   
-
-
-
-
-
-
-
 
 
 // ─────────────────────────────────────────────
