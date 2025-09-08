@@ -56,9 +56,8 @@ project/
 Setup & Installation
 
 1. Clone the repository:
-
-git clone https://github.com/yourusername/cleaning-service-website.git
-cd cleaning-service-website
+- git clone https://github.com/yourusername/cleaning-service-website.git
+- cd cleaning-service-website
 
 2. Install dependencies:
 npm install
