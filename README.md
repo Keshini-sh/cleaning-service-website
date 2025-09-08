@@ -67,13 +67,13 @@ npm install
 3. Set up the database:
 Import the SQL schema into MySQL.
 Update your DB credentials in .env:
-
+<pre>
 DB_HOST=localhost
 DB_USER=root
 DB_PASS=yourpassword
 DB_NAME=cleaning_service
 JWT_SECRET=yourjwtsecret
-
+<pre>
 
 4. Run the server:
 npm start
