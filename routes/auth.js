@@ -32,14 +32,10 @@ router.post('/settings', authController.updateProfile);
 router.post('/delete-account', authController.deleteAccount);
 
 
-//-------------------- maram and vinuya -----------------------
 
 // ─────────────────────────────────────────────
-// Business/Admin Routes (Maram + Vinuya)
+// Business/Admin Routes
 // ─────────────────────────────────────────────
-
-// Admin login (separate route if you want a custom admin form later)
-//router.post('/admin-login', authController.adminLogin);
 
 // Business info CRUD
 router.get('/business-info', authController.getBusinessInfo); // Uses session businessId
@@ -63,9 +59,6 @@ router.get('/loadPaidBills', authController.loadPaidBills);
 // Billing & Late Notices
 router.get('/getUnpaidBookings', authController.getUnpaidBookings);
 router.post('/sendLateNotice', authController.sendLateNotice);
-
-
-
 
 
 // ─────────────────────────────────────────────
