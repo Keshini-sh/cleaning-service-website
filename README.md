@@ -85,6 +85,7 @@ Client side: http://localhost:5050/
 Database  
 The database schema is located in `database/schema.sql`.  
 It defines tables for users, services, bookings, and businesses. 
+
 ------------------------------------------------------------------------------------------
 Future Improvements
 - Deploy on Heroku / Render / Vercel
