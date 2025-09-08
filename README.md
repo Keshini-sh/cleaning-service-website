@@ -73,12 +73,13 @@ DB_USER=root
 DB_PASS=yourpassword
 DB_NAME=cleaning_service
 JWT_SECRET=yourjwtsecret
-<pre>
+</pre>
 
-4. Run the server:
+
+5. Run the server:
 npm start
 
-5. Access the app:
+6. Access the app:
 Client side: http://localhost:5050/
 ------------------------------------------------------------------------------------------
 Future Improvements
