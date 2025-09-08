@@ -36,7 +36,7 @@ Tech Stack
 - Deployment: Localhost (not yet deployed)
 ------------------------------------------------------------------------------------------
 Project Structure 
-<pre> ```plaintext 
+<pre>
 project/
 ├── app.js                # Main server file  
 ├── controllers/  
@@ -53,7 +53,7 @@ project/
 │   ├── register.hbs      # Registration page  
 │   └── dashboard.hbs     # Admin dashboard  
 └── database/             # SQL schema and seed data  
-``` </pre>
+</pre>
 ------------------------------------------------------------------------------------------
 Setup & Installation
 
