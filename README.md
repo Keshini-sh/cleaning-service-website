@@ -36,22 +36,7 @@ Tech Stack
 - Deployment: Localhost (not yet deployed)
 ------------------------------------------------------------------------------------------
 Project Structure 
-project/
-├── app.js                # Main server file  
-├── controllers/  
-│   └── auth.js           # Authentication logic  
-├── routes/  
-│   ├── auth.js           # Auth routes  
-│   └── pages.js          # Client-facing pages  
-├── public/  
-│   ├── css/              # Stylesheets  
-│   ├── js/               # Client-side JS (index.js, admin.js, webpage.js)  
-├── views/  
-│   ├── index.hbs         # Homepage with booking & cart  
-│   ├── login.hbs         # Login page  
-│   ├── register.hbs      # Registration page  
-│   └── dashboard.hbs     # Admin dashboard  
-└── database/             # SQL schema and seed data  
+<pre> ```plaintext project/ ├── app.js # Main server file ├── controllers/ │ └── auth.js # Authentication logic ├── routes/ │ ├── auth.js # Auth routes │ └── pages.js # Client-facing pages ├── public/ │ ├── css/ # Stylesheets │ ├── js/ # Client-side JS (index.js, admin.js, webpage.js) ├── views/ │ ├── index.hbs # Homepage with booking & cart │ ├── login.hbs # Login page │ ├── register.hbs # Registration page │ └── dashboard.hbs # Admin dashboard └── database/ # SQL schema and seed data ``` </pre>
 ------------------------------------------------------------------------------------------
 Setup & Installation
 
