@@ -1,0 +1,551 @@
+/* Global Styles */
+*{
+    box-sizing:border-box;
+  
+  }
+  body {
+    color:#434343;
+    font-family: Libre 'Franklin Gothic Medium', 'Arial Narrow';
+    background:
+    /*radial-gradient(circle at top left, #2200b8, transparent 20%),
+    radial-gradient(circle at right bottom, #7b1dd3, transparent 62%);
+    */linear-gradient(to bottom right, #fafafa, #f0f0f4);
+    
+    /*background-image: linear-gradient(to top, #accbee 0%, #e7f0fd 100%);*/
+    background-image: linear-gradient( 110.3deg,  rgba(88, 143, 245, 0.68) 8.8%, rgb(192, 219, 248) 95.1% );
+
+
+    background-attachment: fixed;
+    background-size: cover;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+  }
+  /*Styling Table*/
+  table {
+    width: 70%; 
+    margin-top: 20px;
+  }
+  
+  th, td{
+    border: 1px solid #333;
+    padding: 5px; 
+    text-align: center; 
+  }
+  
+  th {
+    background-color: #e8e8e8;
+    border: 1px solid #333; /* Add border around each cell */
+    padding: 10px; 
+    text-align: center;
+  }
+  
+  /*Title h2*/
+  h2.card {
+    font-size: 2.5rem; /* Larger font size for emphasis */
+    font-weight: bold;
+    text-align: center;
+    color: rgb(30, 28, 28);
+    background: linear-gradient(90deg, #e3efff, #efedff, #f0f4ff); /* Gradient background */
+    /*-webkit-background-clip: text; /* Makes gradient apply to text only */
+   /* -webkit-text-fill-color: transparent; /* Ensures text color is transparent */
+    margin: 20px 0; /* Adds spacing above and below */
+    text-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3); /* Subtle text shadow for depth */
+    padding: 10px;
+    animation: title-fade-in 1.5s ease-in-out; /* Fading animation */
+  }
+  
+  @keyframes title-fade-in {
+    0% {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Optional border underneath the title */
+  h2.card::after {
+    content: "";
+    display: block;
+    width: 50%;
+    height: 4px;
+    margin: 10px auto 0;
+    background: linear-gradient(90deg, #ced1ff, #9ec1ff);
+    border-radius: 5px;
+  }
+  
+  /*Edit Service*/
+  #delete_button{
+    background-color: rgb(157, 0, 0);
+  }
+  #delete_button:hover {
+    background-color: rgb(202, 0, 0);
+  }
+  
+  /* Centered card for login */
+  .center-card {
+    width: 100%;
+    max-width: 400px;
+    max-height: x00px;
+    padding: 20px;
+    background: #ffffff;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    text-align: left;
+  }
+  
+  .error {
+    color: #e5402e;
+  }
+  
+  .hidden {
+    display: none;
+  }
+  
+  /* Dashboard styling */
+  #adminPanel {
+    width: 100%;
+    max-width: 1200px;
+    padding: 10px;
+  }
+  
+  
+  
+  #logoutButton {
+    background-color: #9d9dff;
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    size: 100%;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+  }
+  
+  #logoutButton:hover {
+    background-color:  #2a57c1;
+  }
+  
+  /* Cards for each section */
+  .card-container {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+  
+  .service-cards {
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+  }
+  
+  button {
+    width: 97%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 15px;
+    border: 1px solid #ddd;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -ms-border-radius: 15px;
+    -o-border-radius: 15px;
+  }
+  
+  /* Update and Delete Buttons */
+  .edit-buttons {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+  }
+  
+  .edit-buttons button {
+    flex: 1; /* Make buttons equal width */
+    padding: 10px 18px;
+    font-size: 0.95rem;
+    font-weight: 500; /* Normal weight for less bold look */
+    border-radius: 6px;
+    cursor: pointer;
+    border: none;
+    text-align: center;
+    transition: all 0.4s ease;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15); /* Add shadow */
+  }
+  
+  /* Update Button */
+  .edit-buttons .update-button {
+    background-color: #00712f; /* Subtle green */
+    color: white;
+  }
+  
+  .edit-buttons .update-button:hover {
+    background-color: #006127; /* Darker green on hover */
+    transform: translateY(-2px); /* Lift effect */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Enhance shadow */
+  }
+  
+  /* Delete Button */
+  .edit-buttons .delete-button {
+    background-color: #a70000; /* Subtle red */
+    color: white;
+  }
+  
+  .edit-buttons .delete-button:hover {
+    background-color: #900303; /* Darker red on hover */
+    transform: translateY(-2px); /* Lift effect */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Enhance shadow */
+  }
+  
+  /* Button Press Animation */
+  .edit-buttons button:active {
+    transform: translateY(2px); /* Slight press down effect */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15); /* Reduced shadow */
+  }
+  
+  /* Input Fields */
+  input, textarea, select {
+    width: 97%;
+    padding: 13px;
+    margin: 5px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc; /* Subtle border */
+    background-color: #f9f9f9;
+    font-size: 1rem;
+    transition: all 0.3s ease-in-out; /* Smooth transition */
+  }
+  
+  /* Focus Effect with Shiny blue Glow */
+  input:focus, textarea:focus, select:focus {
+    border-color: #468aff; /* blue border */
+    box-shadow: 0 0 8px 3px rgba(93, 160, 255, 0.925); /* Shiny blue glow */
+    outline: none; /* Remove default outline */
+    background-color: #fdf9ff; /* Slightly lighter background */
+  }
+  
+  /* Disabled Fields */
+  input:disabled, textarea:disabled, select:disabled {
+    background-color: #e9ecef;
+    border-color: #ccc;
+    color: #6c757d;
+    cursor: not-allowed;
+  }
+  
+  /* Hover Effect */
+  input:hover:not(:disabled), textarea:hover:not(:disabled), select:hover:not(:disabled) {
+    border-color: #39e8f1; /* Purple border on hover */
+  }
+  
+  /* Responsive Adjustments */
+  @media (max-width: 768px) {
+    input, textarea, select {
+      font-size: 0.9rem;
+      padding: 10px;
+    }
+  }
+  
+  
+  button {
+    background-color: #bf0000;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #fffc39;
+  }
+  
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  ul li {
+    background: #ffffff;
+    padding: 8px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  
+  /* General Table Styles */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Table Header */
+  th {
+    background-color: #09005d;  /*edit service*/
+    color: white;
+    font-weight: bold;
+    padding: 15px;
+    text-align: center;
+    font-size: 1.1rem;
+  }
+  
+  /* Table Rows */
+  td {
+    padding: 12px;
+    text-align: center;
+    font-size: 1rem;
+    border-bottom: 1px solid #ddd;
+    color: #333;
+    background-color: #f9f9f9;
+  }
+  
+  /* Alternate Row Colors */
+  tr:nth-child(even) td {
+    background-color: #f3f3f3;
+  }
+  
+  tr:nth-child(odd) td {
+    background-color: #fafafa;
+  }
+  
+  /* Hover Effects for Rows */
+  tr:hover td {
+    background-color: #e5ecf8;
+    color: #030b9a;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+  }
+  
+  /* No Border for Last Row */
+  tr:last-child td {
+    border-bottom: none;
+  }
+  
+  /* Fixed Header */
+  table thead th {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+  }
+  
+  /* Align Text for Actions */
+  .action-cell {
+    text-align: center;
+  }
+  
+  /* Responsive Table */
+  @media (max-width: 768px) {
+    table {
+      font-size: 0.9rem;
+    }
+  
+    th, td {
+      padding: 8px;
+    }
+  
+    .action-cell button {
+      padding: 8px;
+      font-size: 0.8rem;
+    }
+  }
+  
+  
+  /* General Button Styles */
+  button {
+    display: inline-block;
+    padding: 12px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    text-transform: capitalize;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    text-align: center;
+    background-color: #09005d;
+    color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Hover and Focus Effects */
+  button:hover {
+    background-color: #485abfc9;
+    color: #f9f9f9;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    transform: translateY(-2px);
+  }
+  
+  button:focus {
+    outline: 2px solid #7b0000;
+    outline-offset: 2px;
+  }
+  
+  /* Disabled State */
+  button:disabled {
+    background-color: #ccc;
+    color: #666;
+    cursor: not-allowed;
+    box-shadow: none;
+  }
+
+  
+  /* Secondary Buttons */
+  .button-secondary {
+    background-color: #f0f0f0;
+    color: #333;
+    border: 1px solid #ddd;
+  }
+  
+  .button-secondary:hover {
+    background-color: #e0e0e0;
+    color: #000;
+  }
+  
+  /* Buttons in Table */
+  table .action-button {
+    padding: 8px 16px;
+    margin: 5px;
+  }
+  
+  /* Full-Width Button for Forms */
+  .full-width-button {
+    width: 100%;
+  }
+  
+  /* Responsive Adjustments */
+  @media (max-width: 768px) {
+    button {
+      font-size: 0.9rem;
+      padding: 10px 16px;
+    }
+  
+    table .action-button {
+      font-size: 0.8rem;
+      padding: 6px 12px;
+    }
+  }
+  
+  /* Empty State */
+  table .empty-state {
+    text-align: center;
+    font-style: italic;
+    color: #999;
+    padding: 15px;
+  }
+  .card-container, .card {
+    width: 100%; /* Ensures full width for table's parent containers */
+  }
+  
+  #adminPanel .card {
+    margin-bottom: 20px; /* Add some space between sections */
+  }
+  
+  /* Navigation Bar Styles */
+  .horizontal-menu {
+    display: flex; /* Use flexbox to arrange items in a row */
+    justify-content: center; /* Center the items */
+  }
+  
+  .horizontal-menu ul {
+    list-style: none; /* Remove bullets from list */
+    padding: 0; 
+    margin: 0; 
+    display: flex; /* Ensure the list items are displayed in a row */
+  }
+  
+  .horizontal-menu li {
+    margin: 0 15px; /* Space between items */
+  }
+  
+  .horizontal-menu a {
+    color: rgb(58, 58, 58);
+    font-weight: bold;
+    text-decoration: none;
+    padding: 10px 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+  }
+  
+  .horizontal-menu a:hover {
+    color: white;
+    background-color: #09005d;
+    transition: background-color 0.3s;
+    -webkit-transition: background-color 0.3s;
+    -moz-transition: background-color 0.3s;
+    -ms-transition: background-color 0.3s;
+    -o-transition: background-color 0.3s;
+  }
+  
+  .navbar {
+    display: flex;
+    justify-content: space-between; /* Spaces out items evenly */
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #011e41;
+  }
+  
+  .logo {
+    color: #fefafa;
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .nav-links a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 15px;
+    padding: 8px 16px;
+    transition: background-color 0.3s;
+    border-radius: 4px;
+  }
+  
+  /* Button styles */
+  .button-paid {
+  background-color: rgb(15, 175, 15);
+  color: white;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-right: 5px;
+  }
+  
+  .button-unpaid {
+  background-color: rgb(157, 0, 0);
+  color: white;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  }
+  
+  /* Logout Button */
+  
+  #logoutButton {
+    background-color: #3527b4;
+    color: white;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease-in-out;
+  }
+  
+  #logoutButton:hover {
+    background-color: #647cea;
+    box-shadow: 0 6px 12px rgba(160, 168, 254, 0.474);
+  }

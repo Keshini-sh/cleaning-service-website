@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cleaning Company</title>
+    <link rel="stylesheet" href="/css/index.css">
+    <script defer src="/js/index.js"></script>
+
+   
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <h1 class="logo">Clean Sweep</h1>
+        <nav>
+            <a href="#testimonials">Testimonials</a>
+            <a href="#companies">Company Information</a>
+            <a href="#signup">Sign Up</a>
+            <a href="#signup">Log In</a>
+        </nav>
+        <form id="search-form" onsubmit="handleSearch(event)">
+            <input type="text" id="search-bar" placeholder="Search services..." aria-label="Search services">
+            <button type="submit">Search</button>
+        </form>
+    </header>
+
+    <!-- Cookies-->
+    <div id="cookie-banner" style="display: none; position: fixed; bottom: 0; left: 0; width: 100%; background: #262c44; color: white; padding: 10px; text-align: center; z-index: 1000;">
+        <p>
+            This website uses cookies to ensure you get the best experience. 
+            <a href="#" style="color: #f39c12; text-decoration: underline;">Learn more</a>
+        </p>
+        <button id="accept-cookies" style="margin: 5px; padding: 5px 10px; background: #f39c12; color: white; border: none; border-radius: 5px; cursor: pointer;">Accept</button>
+        <button id="decline-cookies" style="margin: 5px; padding: 5px 10px; background: #e74c3c; color: white; border: none; border-radius: 5px; cursor: pointer;">Decline</button>
+    </div>
+    
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h2>Reliable & Professional Cleaning Services</h2>
+            <p>Your home and office deserve the best. Discover our range of cleaning services tailored to your needs.</p>
+           
+        </div>
+    </section>
+
+   
+
+
+
+    <!-- Company Information Section -->
+    <section id="companies" class="company-section">
+        <h3>Company Information</h3>
+        <div class="company-container">
+            <!-- Company 1 -->
+            <div class="company">
+                <h4>Residential and Commercial Cleaning</h4>
+                <ul>
+                    <li><strong>Regular Cleaning</strong>: $150</li>
+                    <li><strong>Major Cleaning</strong>: $300</li>
+                    <li><strong>Exterior Cleaning</strong>: $100</li>
+                    <li><strong>Comprehensive Cleaning</strong>: $450</li>
+                </ul>
+            </div>
+    
+            <!-- Company 2 -->
+            <div class="company">
+                <h4>Car Wash</h4>
+                <ul>
+                    <li><strong>Regular Cleaning</strong>: $30</li>
+                    <li><strong>Major Cleaning</strong>: $50</li>
+                    <li><strong>Exterior Cleaning</strong>: $40</li>
+                    <li><strong>Comprehensive Cleaning</strong>: $75</li>
+                </ul>
+            </div>
+    
+            <!-- Company 3 -->
+            <div class="company">
+                <h4>Pet Grooming</h4>
+                <ul>
+                    <li><strong>Standard Grooming (Nail + Haircut)</strong>: $50</li>
+                    <li><strong>Wash</strong>: $30</li>
+                    <li><strong>Wash + Grooming</strong>: $70</li>
+                </ul>
+                <p><em>Additional $20 charge for house calls.</em></p>
+            </div>
+        </div>
+     <!--<p class="cancellation-policy">Please cancel 48 hours in advance to avoid any charges.</p>-->   
+    </section>
+    
+<!-- Message -->
+<p class="login-message" style="text-align: center; font-size: 1.2rem; font-weight: bold; color: #444; margin-top: 20px;">
+    Please log in or sign up to book a service!
+</p>
+  
+<div class="main-container"> <!-- New container for layout -->
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials">
+        <h3>What Our <br>Clients <br> Say</h3>
+        <div class="testimonial-box">
+            <blockquote>"Fantastic service! The team was thorough and very professional." - Alex G.</blockquote>
+        </div>
+        <div class="testimonial-box">
+            <blockquote>"I love how fresh and clean my house feels every time. Highly recommended!" - Jamie S.</blockquote>
+        </div>
+    </section>
+    
+
+    <!-- Sign-Up and Log-In Section -->
+    <section id="signup" class="account-section">
+        <h3>Create an account or Already a Member</h3>
+        <button onclick="window.location.href='/register'">Sign Up/Log in</button>
+    </section>
+</div>
+
+    <!-- Footer -->
+    <footer>
+        <p>Contact Us: info@cleaningcompany.com | (555) 123-4567</p>
+        <div class="social-icons">
+            <a href="#">Facebook</a>
+            <a href="#">Twitter</a>
+            <a href="#">Instagram</a>
+        </div>
+    </footer>
+
+</body>
+</html>

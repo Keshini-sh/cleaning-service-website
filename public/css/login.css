@@ -1,0 +1,156 @@
+body {
+    font-family: Libre 'Franklin Gothic Medium', 'Arial Narrow';
+}
+
+.homepage, .user-log-in{
+    
+    background:
+   /* radial-gradient(circle at top left, #2200b9, transparent 20%), 
+    radial-gradient(circle at right center, #7b1dd3, transparent 60%),
+    radial-gradient(circle at 80% 50%, #e25706, transparent 100%);*/
+    linear-gradient( 359.5deg,  rgba(115,122,205,1) 8.8%, rgba(186,191,248,1) 77.4% );
+    
+}
+
+
+.create-personal-account, .create-business-account{
+    width: 500px;
+    height: 1000px;
+    background:
+    radial-gradient(circle at top left, #2200b8, transparent 20%), 
+    radial-gradient(circle at right bottom, #7b1dd3, transparent 60%);
+    background-color:#080505;
+} 
+
+
+
+
+.personal-account, .business-account {
+    /*border: 3px solid #333; /* Border around the box */
+    padding: 20px; /* Space inside the box */
+    border-radius: 10px; /* Rounded corners */
+    background-color:transparent; /* White background for the box */
+    /*box-shadow: 0 4px 10px rgba(54, 21, 202, 0.637); /* Slight shadow for depth */
+    width : 400px; /* Fixed width for the box */
+    text-align: left;
+}
+
+body, html {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center vertically */
+    align-items: center; /* Center horizontally */
+    text-align: center; /* Center text */
+}
+
+label {
+    display: block; /* Makes the label take the full width */
+    margin-bottom: 5px; /* Adds space below the label */
+}
+
+input {
+    margin-bottom: 15px; /* Adds space below the input field */
+    margin-right: 15px;
+    width: 90%; /* Makes the input take the full width */
+    padding: 10px; /* Adds padding inside the input for better usability */
+    
+    border: 1px solid #080505;
+    border-radius: 15px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+
+
+/* Styles when the input is focused */
+input:focus {
+    border-color: blue; /* Change border color */
+    box-shadow: 0 0 5px rgb(21, 184, 233); /* Add shadow effect */
+    outline: none; /* Remove default outline */
+}
+
+
+a:active {
+    color: red; /* Change text color to red while the link is active */
+    background-color: yellow; /* Change background color */
+}
+
+/*marams style*/
+#logoutButton {
+    background-color: #262c44;
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    size: 100%;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+  }
+  
+  #logoutButton:hover {
+    background-color:  #3f455a;
+  }
+  
+
+  /*login section*/
+  /* Centered card for login */
+.center-card {
+    width: 100%;
+    max-width: 400px;
+    max-height: x00px;
+    padding: 20px;
+    background: hsl(0, 0%, 100%);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    text-align: left;
+    
+  }
+  
+  /* Cards for each section */
+  /* for edit information*/
+  .card-container {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+  
+  /*admin dashboard*/
+  .card {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  /*for all buttons*/
+  button {
+    width: 97%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 15px;
+    border: 1px solid #ddd;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -ms-border-radius: 15px;
+    -o-border-radius: 15px;
+  }
+  
+  button {
+    background-color: #262c44;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #3f455a;
+  }
+
+  .hidden {
+    display: none;
+  }
+
+

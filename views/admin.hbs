@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Panel</title>
+  <link rel="stylesheet" href="/css/admin.css">
+  <script src="/js/admin.js"></script>
+
+</head>
+<body>
+  
+  <header class="header"></header>
+  
+  <div id="admintitle">
+    <h2 class="card">Admin Dashboard</h2>
+    <nav class="navbar">
+      <div class="horizontal-menu">
+        <ul>
+          <li><a href="#" onclick="showSection('editInfo')">Edit Information</a></li>
+          <li><a href="#" onclick="showSection('manageServices')">Edit Service</a></li>
+          <li><a href="#" onclick="showSection('ManageBillings')">Manage Billings</a></li>
+          <li><a href="#" onclick="showSection('SendNotices')">Send Late Notices</a></li>
+        </ul>
+      </div>
+      <div id="logoutButton" onclick="adminLogout()">Logout</div>
+    </nav>
+
+    <div class="card-container">
+      <!-- Edit Business Information Card -->
+      <div id="editInfo" class="card section">
+          <h3 class="title">Edit Business Information</h3>
+          <form id="editInfoForm">
+              <p>Business Name</p>
+              <input type="text" id="businessName" name="businessName" placeholder="Business Name">
+  
+              <p>Address</p>
+              <input type="text" id="businessAddress" name="businessAddress" placeholder="Address">
+  
+              <p>Email</p>
+              <input type="email" id="businessEmail" name="businessEmail" placeholder="Email">
+  
+              <p>Password</p>
+              <input type="password" id="businessPassword" name="businessPassword" placeholder="Password">
+  
+              <div>
+                  <!-- Update Button -->
+                  <button type="button" onclick="updateBusinessInfo()">Update</button>
+  
+                  <!-- Delete Account Button -->
+                  <button type="button" onclick="deleteAccount()">Delete Account</button>
+              </div>
+          </form>
+      </div>
+  </div>
+
+      <!-- Manage Services Card -->
+      <div id="manageServices" class="card section hidden">
+        <h3 class="title">Manage Services</h3>
+        <form id="manageServicesForm">
+          <p>Service Name</p>
+          <input type="text" id="newService" name="newService" placeholder="Service Name">
+          <p>Service Price</p>
+          <input type="number" id="servicePrice" name="servicePrice" placeholder="Service Price">
+          <button type="button" onclick="addService()">Add Service</button>
+        </form>
+        <ul id="servicesList"></ul>
+
+        <table id="servicesTable">
+          <thead>
+            <tr>
+              <th>Service Name</th>
+              <th>Price</th>
+              <th>Modify</th>
+              <th>Delete</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- JavaScript will populate rows here -->
+          </tbody>
+        </table>
+      </div>
+      
+      <!-- Manage Billings Card -->
+      <div id="ManageBillings" class="card section hidden">
+        <h3>Manage Client Billings (Paid Bills)</h3>
+        <table id="paidBillingsTable">
+          <thead>
+            <tr>
+              <th>Client ID</th>
+              <th>Service</th>
+              <th>Date</th>
+              <th>Amount</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Placeholder for dynamic content -->
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Send Late Notices Card -->
+      <div id="SendNotices" class="card section hidden">
+        <h3>Unpaid Bills - Send Late Notices</h3>
+        <table id="unpaidNoticesTable">
+          <thead>
+            <tr>
+              <th>Client</th>
+              <th>Service</th>
+              <th>Date of Service</th>
+              <th>Amount Due</th>
+              <th>Days Overdue</th>
+              <th>Send Notice</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Placeholder for dynamic content -->
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+
+  </div>
+</body>
+</html>

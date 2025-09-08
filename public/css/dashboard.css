@@ -1,0 +1,612 @@
+:root {
+    --dark-bg: #1f1f1f;
+    --gray-bg: #2e2e2e;
+    --light-gray: #a6a6a6;
+    --lighter-gray: #f1f1f1;
+    --accent-green: #45ffbc;
+    --accent-olive: #e3ffa8;
+    --text-primary: #ffffff;
+    --text-secondary: #a6a6a6;
+    --card-gray: #bdbbb7;
+}
+
+body {
+    margin: 0;
+    font-family: "Franklin Gothic Medium";
+    background-color: var(--dark-bg);
+    color: var(--text-primary);
+    overflow: hidden;
+}
+
+.dashboard {
+    display: flex; /* changed from grid*/
+   /* grid-template-columns: 200px 1fr 300px; */
+    width: 100vw;
+    height: 100vh;
+    gap: 1rem;
+}
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    font-size: 1.5em;
+    position: relative;
+}
+
+
+/* Sidebar */
+.sidebar {
+    background-color: var(--gray-bg);
+    padding: 20px;
+    color: var(--text-secondary);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    height: 100%;
+    width: 220px;
+}
+
+.logo {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-bottom: 2rem;
+    color: var(--text-primary);
+}
+
+.navigation {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.nav-item {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 1em;
+    transition: color 0.3s;
+}
+
+.nav-item:hover {
+    color: var(--text-primary);
+}
+
+.sidebar-footer {
+    font-size: 0.8em;
+    color: var(--text-secondary);
+    text-align: center;
+    margin-top: auto;
+    padding-top: 2rem;
+    border-top: 1px solid #313131;
+}
+
+/* Main Content */
+.main-content {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--dark-bg);
+    padding: 20px;
+    border-radius: 8px;
+    flex: 1;
+    overflow-y: auto;
+}
+
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    font-size: 1.5em;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+}
+
+.search-bar input {
+    padding: 0.5rem;
+    border-radius: 5px;
+    border: none;
+    background-color: var(--gray-bg);
+    color: var(--text-primary);
+}
+
+.search-bar button {
+    padding: 0.5rem 1rem;
+    margin-left: 10px;
+    background-color: var(--lighter-gray);
+    border: none;
+    border-radius: 5px;
+    color: var(--dark-bg);
+    cursor: pointer;
+}
+
+/* Service Cards */
+.add-services {
+    position: relative;
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+.add-service-button {
+    position: relative;
+    align-self: center;
+    margin-left: 100px; /* Adjust this to align next to the last card */
+    background-color: whitesmoke;
+    color: var(--dark-bg);
+    font-size: 1.5em;
+    font-weight: bold;
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease;
+}
+
+.add-service-button:hover {
+    background-color: lightblue;
+}
+
+.card {
+    width: 150px; /* Set a fixed width */
+    height: 150px; /* Set a fixed height to make it square */
+    padding: 20px;
+    border-radius: 8px;
+    color: var(--dark-bg);
+    background-color: var(--accent-olive);
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
+.card:nth-child(2) {
+    background-color: var(--accent-green);
+}
+
+.card:nth-child(3) {
+    background-color: var(--card-gray);
+}
+
+.card button {
+    background: var(--dark-bg);
+    border: none;
+    color: var(--text-primary);
+    padding: 8px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.card button:hover {
+    background: #2e2e2e;
+}
+
+/* Footer text */
+.main-footer {
+    color: var(--text-secondary);
+    font-size: 0.85em;
+    padding-top: 20px;
+    border-top: 1px solid #313131;
+    margin-top: auto;
+}
+
+/* Right Sidebar */
+.right-sidebar {
+    background-color: var(--gray-bg);
+    padding: 20px;
+    border-radius: 8px;
+    height: 100%;
+    overflow-y: auto;
+}
+
+.right-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+.payment-options {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.payment-card {
+    background-color: var(--accent-olive);
+    color: var(--dark-bg);
+    padding: 1rem;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.payment-card:nth-child(2) {
+    background-color: var(--accent-green);
+}
+
+.payment-card:nth-child(3) {
+    background-color: var(--card-gray);
+}
+
+.ongoing-services {
+    color: var(--text-secondary);
+    margin-top: 2rem;
+    background-color: var(--gray-bg);
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.ongoing-services h2{
+    font-size: 1.2em;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+}
+
+
+.transfer-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    margin-bottom: 0.5rem;
+    border-radius: 5px;
+    background-color: var(--dark-bg);
+    color: var(--text-secondary);
+    transition: background-color 0.3s ease;
+}
+
+.transfer-item:hover {
+    background-color: var(--gray-bg);
+    color: var(--text-primary);
+}
+
+.transfer-item .transfer-description {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.transfer-item .transfer-description i {
+    font-size: 1.2em;
+    color: var(--accent-green);
+}
+
+.transfer-amount {
+    font-weight: bold;
+    color: var(--accent-green);
+}
+
+/* Optional icons */
+.transfer-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background-color: var(--accent-green);
+    color: var(--dark-bg);
+    font-size: 1.1em;
+}
+.pay-now-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 1.5rem;
+}
+
+.pay-now-button {
+    background-color: palevioletred;
+    color: var(--dark-bg);
+    padding: 0.75rem 2rem;
+    font-size: 1em;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.pay-now-button:hover {
+    background-color: lightpink; /* Slightly darker shade for hover */
+}
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .dashboard {
+        grid-template-columns: 1fr;
+        height: auto;
+    }
+
+    .sidebar {
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+
+    .main-content, .right-sidebar {
+        width: 100%;
+        flex: none;
+    }
+    
+    /*
+    .service-cards .card, .payment-options .payment-card {
+        flex: 1 1 100%;
+    } */
+
+    .service-cards .card, .payment-options .payment-card {
+        flex: 1 1 100%;
+    } 
+}
+/* Appointments Section */
+.appointments-section {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.appointment-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--gray-bg);
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    color: var(--text-primary);
+}
+
+.appointment-details h3 {
+    margin: 0;
+    font-size: 1.2em;
+}
+
+.appointment-details p {
+    margin: 0.2em 0;
+    color: var(--text-secondary);
+}
+
+.appointment-actions {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.reschedule-button, .cancel-button {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.reschedule-button {
+    background-color: #37DCA3;
+    color: var(--dark-bg);
+}
+
+.reschedule-button:hover {
+    background-color: #2CB985;
+}
+
+.cancel-button {
+    background-color: #FF6B6B;
+    color: var(--text-primary);
+}
+
+.cancel-button:hover {
+    background-color: #D95555;
+}
+/* Payment History Table */
+.payment-history table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+}
+
+.payment-history th, .payment-history td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #313131;
+}
+
+.payment-history th {
+    color: var(--text-secondary);
+}
+
+.payment-history .status-paid {
+    color: #45ffbc;
+    font-weight: bold;
+}
+
+.payment-history .status-pending {
+    color: #e74c3c;
+    font-weight: bold;
+}
+
+/* Settings Form */
+/* General Settings Section Styling */
+.settings {
+    margin-top: 2rem;
+    padding: 1rem;
+    background-color: var(--gray-bg);
+    border-radius: 8px;
+}
+
+.settings h2 {
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+    font-size: 1.5em;
+}
+
+/* Form and Button Styling */
+.settings .form-group {
+    margin-bottom: 1rem;
+}
+
+.settings label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--text-secondary);
+}
+
+.settings input[type="text"],
+.settings input[type="email"],
+.settings input[type="password"],
+.settings select {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #313131;
+    border-radius: 5px;
+    background-color: var(--gray-bg);
+    color: var(--text-primary);
+}
+
+.settings button[type="submit"],
+.settings .add-payment-btn,
+.settings .edit-btn,
+.settings .remove-btn {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    background-color: #45ffbc;
+    color: var(--dark-bg);
+    font-weight: bold;
+    cursor: pointer;
+}
+.settings .edit-btn{
+    margin-left: auto;
+}
+
+.settings .remove-btn {
+    background-color: #a6a6a6;
+    margin-left: 0.5rem;
+}
+
+.settings .edit-btn:hover{
+    background-color: #818181
+}
+.settings .remove-btn:hover,
+.settings .add-payment-btn:hover {
+    background-color: red;
+}
+
+.settings .add-payment-btn {
+    margin-top: 1rem;
+    display: inline-block;
+    background-color: #45ffbc;
+}
+
+/* Payment Method Styling */
+.payment-methods {
+    display: flex;
+    flex-direction: column;
+}
+
+.payment-method {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    background-color: #2e2e2e;
+    border-radius: 8px;
+}
+/* Reschedule Modal Styling */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: #333;
+    color: #fff;
+    margin: 15% auto;
+    padding: 20px;
+    border-radius: 8px;
+    width: 80%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.modal .close {
+    float: right;
+    font-size: 1.5rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+#service-results {
+    list-style-type: none;
+    padding: 0;
+}
+
+#service-results li {
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#service-results li:hover {
+    background-color: #f9f9f9;
+}
+
+input[type="radio"] {
+    margin-right: 10px;
+}
+.right-sidebar .add-services {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+}
+
+.service-card {
+    background-color: var(--gray-bg);
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    text-align: center;
+}
+
+.service-card h4 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.add-service-btn {
+    background-color: var(--accent-green);
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.add-service-btn:hover {
+    background-color: var(--accent-olive);
+}

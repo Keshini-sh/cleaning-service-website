@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Client Dashboard</title>
+  <link rel="stylesheet" href="/css/dashboard.css" />
+</head>
+<body>
+<div class="dashboard">
+
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <div class="logo">Clean Sweep</div>
+    <nav class="navigation">
+      <a href="/dashboard/services" class="nav-item">Dashboard</a>
+      <a href="/dashboard/upcoming" class="nav-item">Upcoming</a>
+      <a href="/dashboard/payments" class="nav-item">Payment History</a>
+      <a href="/dashboard/make-payment" class="nav-item">Make Payment</a>
+      <a href="/dashboard/settings" class="nav-item">Settings</a>
+      <a href="/index" class="nav-item">Return Home</a>
+      <a href="/auth/logout" class="nav-item">Logout</a>
+    </nav>
+    <footer class="sidebar-footer">Clean Sweep &copy; 2024</footer>
+  </aside>
+
+  <!-- Main Content Area -->
+  <main class="main-content">
+    {{#if (eq section "services")}}
+      <header class="main-header">
+        <h3>Services</h3>
+      </header>
+
+<!-- Add this inside your services section -->
+<div class="add-services" style="background-color: #bdbbb7;"></div> 
+
+
+
+
+      <section class="service-cards">
+        <div class="card" style="background-color: #e3ffa8;" data-service="Car Wash">
+          <h4>Car Wash</h4>
+          <button class="book-btn">Book service</button>
+        </div>
+        <div class="card" style="background-color: #45ffbc;" data-service="Pet Grooming">
+          <h4>Pet Grooming</h4>
+          <button class="book-btn">Book service</button>
+        </div>
+        <div class="card" style="background-color: #bdbbb7;" data-service="Residential and Commercial Cleaning">
+          <h4>Residential and Commercial Cleaning</h4>
+          <button class="book-btn">Book service</button>
+        </div>
+      </section>
+
+      <section class="ongoing-services">
+        <h2>Ongoing Services</h2>
+        <div id="ongoing-services-container"></div>
+      </section>
+
+      <footer class="main-footer">Services are non-refundable.</footer>
+
+      <!-- Booking Modal -->
+      <div id="bookingModal" class="modal">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <h2>Book Service</h2>
+          <form id="modalBookingForm">
+            <input type="text" id="modal-username" placeholder="Your Name" required>
+            <input type="hidden" id="modal-service">
+            <input type="date" id="modal-date" required>
+            <input type="time" id="modal-time" required>
+            <input type="text" id="modal-location" placeholder="Location" required>
+            <button type="submit">Submit Booking</button>
+          </form>
+        </div>
+      </div>
+
+    {{else if (eq section "payments")}}
+      <header class="main-header">
+        <h3>Payment History</h3>
+      </header>
+
+      <section class="payment-history">
+        <table>
+          <thead>
+            <tr>
+              <th>Service</th>
+              <th>Date</th>
+              <th>Amount</th>
+              <th>Status</th>
+              <th>Invoice</th>
+            </tr>
+          </thead>
+          <tbody id="payment-history-body">
+            <!-- Rows populated dynamically -->
+          </tbody>
+        </table>
+      </section>
+
+    {{else if (eq section "make-payment")}}
+      <header class="main-header">
+        <h2>Make a Payment</h2>
+      </header>
+
+      <section>
+        <h3>Search Services</h3>
+        <div class="search-bar">
+          <input type="text" id="search-services" placeholder="Search services...">
+          <button onclick="searchServices()">Search</button>
+        </div>
+        <form id="service-selection">
+          <ul id="service-results" class="service-list"></ul>
+        </form>
+      </section>
+
+      <section>
+        <form id="payment-form" class="settings">
+          <h3>Payment Details</h3>
+          <div class="form-group">
+            <label for="full-name">Full Name on Card:</label>
+            <input type="text" id="full-name" placeholder="Enter your full name" required>
+          </div>
+          <div class="form-group">
+            <label>Payment Method:</label>
+            <div class="payment-methods">
+              <label><input type="radio" name="payment-method" value="Visa" required> Visa</label>
+              <label><input type="radio" name="payment-method" value="Amex"> Amex</label>
+              <label><input type="radio" name="payment-method" value="Mastercard"> Mastercard</label>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="card-number">Card Number (9 digits):</label>
+            <input type="text" id="card-number" maxlength="9" placeholder="Enter card number" required>
+          </div>
+          <div class="form-group">
+            <label for="expiry-date">Expiry Date (MM/YY):</label>
+            <input type="text" id="expiry-date" placeholder="MM/YY" required>
+          </div>
+          <div class="form-group">
+            <label for="cvv">CVV (3 digits):</label>
+            <input type="text" id="cvv" maxlength="3" placeholder="Enter CVV" required>
+          </div>
+          <button type="submit" class="add-payment-btn">Pay Now</button>
+        </form>
+      </section>
+
+    {{else if (eq section "settings")}}
+      <header class="main-header">
+        <h2>Settings</h2>
+      </header>
+
+
+
+     
+<section class="settings">
+  <h3>Edit Account</h3>
+    <form id="account-form" action="/auth/settings" method="POST">
+    <input type="hidden" name="name" value="{{user.name}}" /> 
+    <div class="form-group">
+      <label for="username">Username</label>
+      <input type="text" id="username" name="username" value="{{user.username}}" />
+    </div>
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" value="{{user.email}}" />
+    </div>
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" placeholder="Enter new password" />
+    </div>
+    <button type="submit">Save Changes</button>
+  </form>
+</section>
+
+
+
+
+
+      <section class="settings">
+        <h2>Manage Payment Methods</h2>
+        <div class="payment-methods">
+          <div class="payment-method">
+            <span>Visa ending in 1234</span>
+            <button class="edit-btn">Edit</button>
+            <button class="remove-btn">Remove</button>
+          </div>
+          <div class="payment-method">
+            <span>MasterCard ending in 5678</span>
+            <button class="edit-btn">Edit</button>
+            <button class="remove-btn">Remove</button>
+          </div>
+          <button class="add-payment-btn">Add New Payment Method</button>
+        </div>
+      </section>
+
+      <section class="settings">
+        <h2>Preferences</h2>
+        <form id="preferences-form">
+          <div class="form-group">
+            <label for="notifications">Notifications</label>
+            <select id="notifications">
+              <option value="all">All Notifications</option>
+              <option value="email">Email Only</option>
+              <option value="none">None</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="language">Language</label>
+            <select id="language">
+              <option value="en">English</option>
+              <option value="es">Spanish</option>
+              <option value="fr">French</option>
+            </select>
+          </div>
+          <button type="submit">Save Preferences</button>
+        </form>
+      </section>
+
+    {{else if (eq section "upcoming")}}
+      <header class="main-header">
+        <h3>Upcoming Appointments</h3>
+      </header>
+
+      <section class="appointments-section">
+        <p>Loading appointments...</p>
+      </section>
+
+      <footer class="main-footer">
+        <p>No appointments loaded yet.</p>
+      </footer>
+
+      <div id="rescheduleModal" class="modal">
+        <div class="modal-content">
+          <span class="close-button" onclick="closeRescheduleModal()">&times;</span>
+          <h3>Reschedule Appointment</h3>
+          <input type="hidden" id="reschedule-appointment-id">
+          <label for="new-date">New Date:</label>
+          <input type="date" id="new-date" required>
+          <label for="new-time">New Time:</label>
+          <input type="time" id="new-time" required>
+          <button id="reschedule-save-btn">Save</button>
+          <button id="reschedule-cancel-btn" onclick="closeRescheduleModal()">Cancel</button>
+        </div>
+      </div>
+    {{/if}}
+  </main>
+</div>
+
+<!-- Dynamic script loader -->
+{{#if (eq section "services")}}
+  <script defer src="/js/services.js"></script>
+{{else if (eq section "payments")}}
+  <script src="/js/payments.js"></script>
+{{else if (eq section "make-payment")}}
+  <script src="/js/makePayment.js"></script>
+{{else if (eq section "settings")}}
+  <script src="/js/settings.js"></script>
+{{else if (eq section "upcoming")}}
+  <script src="/js/upcoming.js"></script>
+{{/if}}
+
+</body>
+</html>

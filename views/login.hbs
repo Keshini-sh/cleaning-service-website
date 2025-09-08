@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en"> 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="/css/login.css">
+    <title>Login</title>
+</head>
+
+<body class="user-log-in">
+    <form id="userLogin" class="center-card" action="/auth/login" method="POST">
+        <h2>LOGIN</h2>
+
+        <!-- Input fields -->
+        <label for="email">Email:</label>
+        <input type="email" id = "email" name="email" required placeholder="Enter your email">
+
+        <label for="password">Password:</label>
+        <input type="password" id ="password" name="password" required placeholder="Enter your password">
+
+        <!-- Submit button -->
+        <button type="submit">Login</button>
+
+        <!-- Display error messages -->
+        {{#if message}}
+        <p class="error-message">{{message}}</p>
+        {{/if}}
+    </form>
+</body>
+</html>
