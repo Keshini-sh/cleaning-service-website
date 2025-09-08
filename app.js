@@ -66,13 +66,7 @@ function isAuthenticated(req, res, next) {
 
 
 
-
-
-
-
-
-
-// ========== AFFAN's API ROUTES (Client Dashboard Backend) ==========
+// ========== API ROUTES (Client Dashboard Backend) ==========
 
 // Add booking
 app.post('/api/bookings', isAuthenticated, async (req, res) => {
@@ -102,32 +96,6 @@ app.get('/api/bookings/upcoming', isAuthenticated, async (req, res) => {
 });
 
 // Complete a booking + generate invoice
-/*
-app.post('/api/bookings/complete/:id', isAuthenticated, async (req, res) => {
-    const { id } = req.params;
-    try {
-        const [bookingRows] = await db.query(`SELECT * FROM bookings WHERE id = ?`, [id]);
-        const booking = bookingRows[0];
-        const { service, date, time, location, username } = booking;
-
-        await db.query(`UPDATE bookings SET status = 'Completed' WHERE id = ?`, [id]);
-
-        const amount = calculateAmount(service);
-        const invoiceId = generateInvoice(username, service, date, time, location, amount);
-
-        await db.query(
-            `INSERT INTO paymentHistory (Service, Date, Amount, Status, Invoice) VALUES (?, ?, ?, 'Unpaid', ?)`,
-            [service, date, amount, invoiceId]
-        );
-
-        res.json({ success: true });
-    } catch (err) {
-        console.error(err);
-        res.status(500).json({ success: false });
-    }
-});
-*/
-
 app.post('/api/bookings/complete/:id', isAuthenticated, async (req, res) => {
     const { id } = req.params;
 
