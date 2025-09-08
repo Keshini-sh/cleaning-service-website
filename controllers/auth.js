@@ -73,54 +73,10 @@ exports.registerBusiness = (req, res) => {
         });
     });
 };
-/*
+
 // ─────────────────────────────────────────────
 // Login (Client)
 // ─────────────────────────────────────────────
-exports.login = (req, res) => {
-    const { email, password } = req.body;
-
-    db.query('SELECT * FROM users WHERE email = ?', [email], (error, results) => {
-        if (error) {
-            return res.render('login', {
-                message: 'There was an error. Please try again.'
-            });
-        }
-
-        if (results.length === 0) {
-            return res.render('login', {
-                message: 'No account found with that email address.'
-            });
-        }
-
-        const user = results[0];
-
-        if (password !== user.password) {
-            return res.render('login', {
-                message: 'Incorrect password. Please try again.'
-            });
-        }
-            
-
-        // Save session
-        req.session.userId = user.id;
-        req.session.user = {
-            id: user.id,
-            name: user.name,
-            username: user.username,
-            email: user.email,
-            password: user.password
-        };
-
-        req.session.save((err) => {
-            if (err) return res.status(500).send('Session save error');
-            return res.redirect('/dashboard/settings');
-        });
-    });
-};
-
-*/ 
-
 
 exports.login = (req, res) => {
     const { email, password } = req.body;
@@ -197,58 +153,6 @@ exports.login = (req, res) => {
 // ─────────────────────────────────────────────
 // Update Profile (Client)
 // ─────────────────────────────────────────────
-/*exports.updateProfile = (req, res) => {
-
-
-
-    console.log("🔧 Incoming updateProfile data:", req.body);
-
-    if (!req.session.userId) {
-        return res.status(401).json({ success: false, message: 'Unauthorized: User session not found.' });
-    }
-
-    const { name, username, email, password } = req.body;
-    const userId = req.session.userId;
-
-    if (!name || !username || !email || !password) {
-        return res.status(400).json({ success: false, message: 'All fields are required.' });
-    }
-
-    db.query(
-        'UPDATE users SET name = ?, username = ?, email = ?, password = ? WHERE id = ?',
-        [name, username, email, password, userId],
-        (err, results) => {
-            if (err) {
-                //debug
-                console.error("❌ DB error during profile update:", err);
-
-                return res.status(500).json({ success: false, message: 'Error updating profile.' });
-            }
-            if (results.affectedRows === 0) {
-
-                //debug
-                console.warn("⚠️ No user found with the given ID or no fields were changed.");
-
-                return res.status(400).json({
-                    success: false,
-                    message: 'No changes were made.'
-                });
-            }
-
-            // Update session data
-            Object.assign(req.session.user, { name, username, email, password });
-
-            return res.json({
-                success: true,
-                message: 'Profile updated successfully.',
-                updatedUser: req.session.user
-            });
-        }
-    );
-};
-*/
-
-
 exports.updateProfile = (req, res) => {
     const userId = req.session.user?.id;
     if (!userId) {
@@ -260,48 +164,6 @@ exports.updateProfile = (req, res) => {
     if (!name || !username || !email || !password) {
         return res.status(400).json({ message: 'All fields are required' });
     }
-
-
-
-
-/*
-
-    db.query(
-        'UPDATE users SET name = ?, username = ?, email = ?, password = ? WHERE id = ?',
-        [name, username, email, password, userId],
-        (err, results) => {
-            if (err) {
-                console.error('Update error:', err);
-                return res.status(500).json({ message: 'Failed to update user profile' });
-            }
-    
-            // ✅ Update session
-            req.session.user = {
-                ...req.session.user,
-                name,
-                username,
-                email,
-                password, // Not recommended, but OK if already storing it
-            };
-    
-            // ✅ Force session to save
-            req.session.save((saveErr) => {
-                if (saveErr) {
-                    console.error('Session save error:', saveErr);
-                    return res.status(500).json({ message: 'Failed to save session' });
-                }
-    
-                // ✅ Respond with success
-                return res.json({
-                    message: 'User profile updated successfully',
-                    success: true
-                });
-            });
-        }
-    );
-*/
-
-
 
 
     db.query(
@@ -327,22 +189,7 @@ exports.updateProfile = (req, res) => {
             });
         }
     );
-
-
-
-
-
-    
 }; 
-
-
-
-
-
-
-
-
-
 
 
 // ─────────────────────────────────────────────
@@ -368,55 +215,12 @@ exports.deleteAccount = (req, res) => {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // ─────────────────────────────────────────────
-// Business/Admin Logic (Maram + Vinuya)
+// Business/Admin Logic
 // ─────────────────────────────────────────────
 
 
 // Admin login
-/*
-exports.adminLogin = (req, res) => {
-    const { username, password } = req.body;
-
-    db.query('SELECT id, name, password FROM business_info WHERE name = ?', [username], (err, results) => {
-        if (err) {
-            console.error('Login DB error:', err);
-            return res.json({ success: false, message: 'Database error' });
-        }
-
-        if (results.length === 0) {
-            return res.json({ success: false, message: 'Business not found' });
-        }
-
-        const business = results[0];
-        if (business.password === password) {
-            req.session.businessId = business.id;
-            req.session.business = business;
-            return res.json({ success: true, message: 'Login successful', businessId: business.id });
-        } else {
-            return res.json({ success: false, message: 'Invalid credentials' });
-        }
-    });
-};
-*/
 // Get business info (using session)
 exports.getBusinessInfo = (req, res) => {
     const businessId = req.session.businessId;
@@ -534,7 +338,6 @@ exports.updateService = (req, res) => {
 };
 
 
-
 // Delete a service
 exports.deleteService = (req, res) => {
     const { id } = req.params;
@@ -575,7 +378,6 @@ exports.loadPaidBills = (req, res) => {
         res.json(results);
     });
 };
-
 
 
 // Get unpaid bookings for late notices
