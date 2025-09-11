@@ -74,23 +74,17 @@ router.get('/dashboard/upcoming', isAuthenticated, (req, res) => {
 });
 
 router.get('/dashboard/settings', isAuthenticated, (req, res) => {
-    console.log("📦 Session user data at /dashboard/settings:", req.session.user);
     res.render('dashboard', { section: 'settings', user: req.session.user });
 });
 
 // Handle POST for updating profile from /dashboard/settings
 router.post('/dashboard/settings', isAuthenticated, authController.updateProfile);
-console.log("📡 About to run UPDATE query...kkk");
-
 
 router.post('/dashboard/settings', isAuthenticated, (req, res, next) => {
-    console.log("🚀 POST /dashboard/settings hit");
     next(); // forward to the controller
 }, authController.updateProfile);
-console.log("📡 About to run UPDATE query...iii");
 
 
-//-------------------- Maram + Vinuya ------------------
 // ─────────────────────────────────────
 // ADMIN: Admin Dashboard View
 // ─────────────────────────────────────
