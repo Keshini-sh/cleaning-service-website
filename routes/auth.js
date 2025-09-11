@@ -41,7 +41,6 @@ router.post('/delete-account', authController.deleteAccount);
 router.get('/business-info', authController.getBusinessInfo); // Uses session businessId
 //router.put('/updateBusinessInfo', authController.updateBusinessInfo);
 router.put('/updateBusinessInfo', (req, res, next) => {
-    console.log("🔥 PUT /updateBusinessInfo hit");
     next();
 }, authController.updateBusinessInfo);
 router.delete('/deleteBusinessInfo', authController.deleteBusinessInfo);
