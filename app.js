@@ -253,5 +253,5 @@ function generateInvoice(username, service, date, time, location, amount) {
 
 // Start server
 app.listen(port, () => {
-    console.log(`🚀 Server running at http://localhost:${port}`);
+    console.log(`Server running at http://localhost:${port}`);
 });
